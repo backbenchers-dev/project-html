@@ -1,0 +1,2242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-html</title>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-insiders.4a070ac/tailwind.min.css" integrity="sha512-vJu7D5BpjnNXVpLBrl9LKLvmXBNjiLwge8EOZ/YS9XwiChpfKLAlydwIZvoJaDE3LI/kr3goH0MzDzNbBgyoOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/basscss@latest/css/basscss.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../public//output.css">
+    <style>
+        .gradient {
+            background-image: linear-gradient(to bottom,
+                    rgba(243, 244, 246, 0.1),
+                    rgba(0, 0, 0, 0.7));
+        }
+
+        .group:hover .group-hover\:translate-y-0 {
+            transform: translateY(0);
+        }
+    </style>
+    <!--Table 2 css start-->
+    <style>
+        @media (min-width: 640px) {
+            .sm\:bg-svg-bottom {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='353' height='304'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M180.29 759c102.087-21.62 155.232-61.312 159.437-119.074 6.307-86.643-231.598-17.186-136.358-198 95.241-180.813 181.318-185.29 136.358-298C294.767 31.216 174.04-27.954 33.79 16.8c-93.501 29.836-144.652 140.545-153.453 332.126'/%3E%3Cpath d='M138.3 759c80.083-18.988 121.774-53.846 125.072-104.575 4.948-76.093-181.679-15.094-106.966-173.89C231.118 321.738 298.64 317.808 263.372 218.82c-35.269-98.986-129.974-150.95-239.995-111.646C-49.97 133.378-90.096 230.605-97 398.859'/%3E%3Cpath d='M102.065 761c60.604-16.56 92.153-46.963 94.65-91.208 3.743-66.367-137.488-13.165-80.949-151.664 56.54-138.5 107.638-141.927 80.948-228.261-26.69-86.335-98.359-131.656-181.618-97.376C-40.41 215.345-70.775 300.145-76 446.892'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+
+        .toggle_dot {
+            top: -.25rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:checked~.toggle_dot {
+            transform: translateX(100%);
+            background-color: #0082c8;
+        }
+
+        .bg-gradient {
+            background: #667db6;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .bg-gradient-base {
+            background-color: #0082c8;
+        }
+
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+    <!--Table 2 css end-->
+</head>
+
+<body class="
+antialiased
+bg-gradient-to-r
+from-pink-300
+via-purple-300
+to-indigo-400
+">
+    <!-- Navbar start -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }"
+            class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+                <a href="../index.html" class="flex items-center">
+                    <img src="https://ih1.redbubble.net/image.1964193013.9830/st,small,507x507-pad,600x600,f8f8f8.jpg"
+                        class="mr-3 h-6 sm:h-9 animate-pulse" alt="Flowbite Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Backbencher</span>
+                </a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Portfolio</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">About</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Contact</a>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                        <span>Components</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                        <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="../slider/slide-1.html">Slider</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="#">Navbar</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="">Form</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="#">Card</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="#">Table</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar end -->
+    <!--Table start-->
+    <div class="container mx-auto">
+        <!--Data table start-->
+        <div class="container mx-auto py-6 px-4" x-data="datatables()" x-cloak>
+            <h1 class="text-4xl font-extrabold py-4 border-b mb-10">Datatable</h1>
+    
+            <div x-show="selectedRows.length" class="bg-teal-200 fixed top-0 left-0 right-0 z-40 w-full shadow">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex md:items-center">
+                        <div class="mr-4 flex-shrink-0">
+                            <svg class="h-8 w-8 text-teal-600"  viewBox="0 0 20 20" fill="currentColor">  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div x-html="selectedRows.length + ' rows are selected'" class="text-teal-800 text-lg"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mb-4 flex justify-between items-center">
+                <div class="flex-1 pr-4">
+                    <div class="relative md:w-1/3">
+                        <input type="search"
+                            class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                            placeholder="Search...">
+                        <div class="absolute top-0 left-0 inline-flex items-center p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="0" y="0" width="24" height="24" stroke="none"></rect>
+                                <circle cx="10" cy="10" r="7" />
+                                <line x1="21" y1="21" x2="15" y2="15" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="shadow rounded-lg flex">
+                        <div class="relative">
+                            <button @click.prevent="open = !open"
+                                class="rounded-lg inline-flex items-center bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline text-gray-500 font-semibold py-2 px-2 md:px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:hidden" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="0" y="0" width="24" height="24" stroke="none"></rect>
+                                    <path
+                                        d="M5.5 5h13a1 1 0 0 1 0.5 1.5L14 12L14 19L10 16L10 12L5 6.5a1 1 0 0 1 0.5 -1.5" />
+                                </svg>
+                                <span class="hidden md:block">Display</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="0" y="0" width="24" height="24" stroke="none"></rect>
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+    
+                            <div x-show="open" @click.away="open = false"
+                                class="z-40 absolute top-0 right-0 w-40 bg-white rounded-lg shadow-lg mt-12 -mr-1 block py-1 overflow-hidden">
+                                <template x-for="heading in headings">
+                                    <label
+                                        class="flex justify-start items-center text-truncate hover:bg-gray-100 px-4 py-2">
+                                        <div class="text-teal-600 mr-3">
+                                            <input type="checkbox" class="form-checkbox focus:outline-none focus:shadow-outline" checked @click="toggleColumn(heading.key)">
+                                        </div>
+                                        <div class="select-none text-gray-700" x-text="heading.value"></div>
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative"
+                style="height: 405px;">
+                <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+                    <thead>
+                        <tr class="text-left">
+                            <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+                                <label
+                                    class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox focus:outline-none focus:shadow-outline" @click="selectAllCheckbox($event);">
+                                </label>
+                            </th>
+                            <template x-for="heading in headings">
+                                <th class="bg-gray-100 sticky top-0 border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"
+                                    x-text="heading.value" :x-ref="heading.key" :class="{ [heading.key]: true }"></th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="user in users" :key="user.userId">
+                            <tr>
+                                <td class="border-dashed border-t border-gray-200 px-3">
+                                    <label
+                                        class="text-teal-500 inline-flex justify-between items-center hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox rowCheckbox focus:outline-none focus:shadow-outline" :name="user.userId"
+                                                @click="getRowDetail($event, user.userId)">
+                                    </label>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 userId">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.userId"></span>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 firstName">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.firstName"></span>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 lastName">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center" x-text="user.lastName"></span>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 emailAddress">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center"
+                                        x-text="user.emailAddress"></span>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 gender">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center"
+                                        x-text="user.gender"></span>
+                                </td>
+                                <td class="border-dashed border-t border-gray-200 phoneNumber">
+                                    <span class="text-gray-700 px-6 py-3 flex items-center"
+                                        x-text="user.phoneNumber"></span>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Data table end-->
+        <!--Table 1 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 1</h1>
+        </div>
+        <section class="relative py-5 bg-blueGray-50">
+            <div class="w-full mb-12 px-4">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded 
+          bg-white text-emerald-500">
+                    <div class="rounded-t mb-0 px-4 py-3 border-0">
+                        <div class="flex flex-wrap items-center">
+                            <div class="relative w-full px-4 max-w-full flex-grow flex-1 ">
+                                <h3 class="font-semibold text-lg text-black-900">Card Tables</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block w-full overflow-x-auto ">
+                        <table class="items-center w-full bg-transparent border-collapse">
+                            <thead>
+                                <tr>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                        Project</th>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                        Budget</th>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                        Status</th>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                        Users</th>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                        Completion </th>
+                                    <th
+                                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                                        <img src="https://demos.creative-tim.com/notus-js/assets/img/bootstrap.jpg"
+                                            class="h-12 w-12 bg-white rounded-full border" alt="...">
+                                        <span class="ml-3 font-bold text-blue-500"> Argon Design System </span>
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $2,500 USD</td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <i class="fas fa-circle text-orange-500 mr-2"></i>pending
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-3-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-4-470x470.png"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">60%</span>
+                                            <div class="relative w-full">
+                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
+                                                    <div style="width: 60%"
+                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                        <a href="#pablo" class="text-blueGray-500 block py-1 px-3"
+                                            onclick="openDropdown(event,'table-dark-1-dropdown')">
+                                            <i class="fas fa-ellipsis-v"></i></a>
+                                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                            id="table-dark-1-dropdown">
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
+                                                href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
+                                                action</a><a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
+                                                else here</a>
+                                            <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
+                                                link</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                                        <img src="https://demos.creative-tim.com/notus-js/assets/img/angular.jpg"
+                                            class="h-12 w-12 bg-white rounded-full border" alt="...">
+                                        <span class="ml-3 font-bold text-black-900">Angular Now UI Kit PRO </span>
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-blue-900">
+                                        $1,800 USD</td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-black-900">
+                                        <i class="fas fa-circle text-emerald-500 mr-2"></i>completed
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-3-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-4-470x470.png"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">100%</span>
+                                            <div class="relative w-full">
+                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-500">
+                                                    <div style="width: 30%"
+                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                        <a href="#pablo" class="text-blueGray-500 block py-1 px-3"
+                                            onclick="openDropdown(event,'table-dark-1-dropdown')">
+                                            <i class="fas fa-ellipsis-v"></i></a>
+                                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                            id="table-dark-1-dropdown">
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
+                                                href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
+                                                action</a><a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
+                                                else here</a>
+                                            <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
+                                                link</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                                        <img src="https://demos.creative-tim.com/notus-js/assets/img/sketch.jpg"
+                                            class="h-12 w-12 bg-white rounded-full border" alt="...">
+                                        <span class="ml-3 font-bold text-black-900">Black Dashboard Sketch
+                                        </span>
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $3,150 USD</td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <i class="fas fa-circle text-orange-500 mr-2"></i>delayed
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-3-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-4-470x470.png"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">73%</span>
+                                            <div class="relative w-full">
+                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
+                                                    <div style="width: 73%"
+                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                        <a href="#pablo" class="text-blueGray-500 block py-1 px-3"
+                                            onclick="openDropdown(event,'table-dark-1-dropdown')">
+                                            <i class="fas fa-ellipsis-v"></i></a>
+                                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                            id="table-dark-1-dropdown">
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
+                                                href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
+                                                action</a><a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
+                                                else here</a>
+                                            <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
+                                                link</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                                        <img src="https://demos.creative-tim.com/notus-js/assets/img/react.jpg"
+                                            class="h-12 w-12 bg-white rounded-full border" alt="...">
+                                        <span class="ml-3 font-bold text-black-900">React Material Dashboard
+                                        </span>
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $4,400 USD</td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <i class="fas fa-circle text-teal-500 mr-2"></i>on schedule
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-3-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-4-470x470.png"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">90%</span>
+                                            <div class="relative w-full">
+                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-teal-200">
+                                                    <div style="width: 90%"
+                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                        <a href="#pablo" class="text-blueGray-500 block py-1 px-3"
+                                            onclick="openDropdown(event,'table-dark-1-dropdown')">
+                                            <i class="fas fa-ellipsis-v"></i></a>
+                                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                            id="table-dark-1-dropdown">
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
+                                                href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
+                                                action</a><a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
+                                                else here</a>
+                                            <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
+                                                link</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                                        <img src="https://demos.creative-tim.com/notus-js/assets/img/vue.jpg"
+                                            class="h-12 w-12 bg-white rounded-full border" alt="...">
+                                        <span class="ml-3 font-bold text-black-900">Vue Material Dashboard
+                                        </span>
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $2,200USD</td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <i class="fas fa-circle text-emerald-500 mr-2"></i>completed
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-3-800x800.jpg"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                            <img src="https://demos.creative-tim.com/notus-js/assets/img/team-4-470x470.png"
+                                                alt="..."
+                                                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4">
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <div class="flex items-center">
+                                            <span class="mr-2">100%</span>
+                                            <div class="relative w-full">
+                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
+                                                    <div style="width: 100%"
+                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                        <a href="#pablo" class="text-blueGray-500 block py-1 px-3"
+                                            onclick="openDropdown(event,'table-dark-1-dropdown')">
+                                            <i class="fas fa-ellipsis-v"></i></a>
+                                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                            id="table-dark-1-dropdown">
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Action</a><a
+                                                href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Another
+                                                action</a><a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Something
+                                                else here</a>
+                                            <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
+                                            <a href="#pablo"
+                                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
+                                                link</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Table 1 end-->
+        <!--Table 2 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 2</h1>
+        </div>
+        <div class="flex flex-row justify-center my-4 text-sm tracking-tight font-medium text-gray-700">
+            <p class="mx-3">Annually</p>
+
+            <!-- Toggle Button -->
+            <label for="toggle" class="flex items-center cursor-pointer">
+                <!-- toggle -->
+                <div class="relative">
+                    <!-- hidden input -->
+                    <input id="toggle" type="checkbox" class="hidden" onclick="myFunction()" />
+                    <!-- line -->
+                    <div class="w-10 h-3 bg-gray-400 rounded-full shadow-inner"></div>
+                    <!-- dot -->
+                    <div class="toggle_dot absolute w-5 h-5 bg-white rounded-full shadow inset-y-0 left-0"></div>
+                </div>
+            </label>
+
+            <p class="mx-3">Monthly</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:transform md:scale-75 lg:scale-100 justify-center">
+            <div
+                class="border rounded-lg md:rounded-r-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
+                <div class="">Basic</div>
+                <div id="month" class="font-bold text-6xl month hidden">&dollar;19.99</div>
+                <div id="annual" class="font-bold text-6xl annual">&dollar;199.99</div>
+                <hr>
+                <div class="text-sm my-3">500 GB Storage</div>
+                <hr>
+                <div class="text-sm my-3">2 Users Allowed</div>
+                <hr>
+                <div class="text-sm my-3">Send up to 3 GB</div>
+                <hr>
+                <a href="#" target="_blank">
+                    <div
+                        class="bg-gradient-base border border-blue-600 hover:bg-white text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">
+                        Learn More</div>
+                </a>
+            </div>
+
+            <div
+                class="border-transparent rounded-lg text-center p-5 mx-auto md:mx-0 my-2 bg-gradient text-white font-medium z-10 shadow-lg">
+                <div class="py-4">Professional
+                    <div id="month" class="font-bold text-6xl month hidden">&dollar;24.99</div>
+                    <div id="annual" class="font-bold text-6xl annual">&dollar;249.99</div>
+                    <hr>
+                    <div class="text-sm my-3">1 TB Storage</div>
+                    <hr>
+                    <div class="text-sm my-3">5 Users Allowed</div>
+                    <hr>
+                    <div class="text-sm my-3">Send up to 10 GB</div>
+                    <hr>
+                    <a href="#" target="_blank">
+                        <div
+                            class="bg-white border border-white hover:bg-transparent text-blue-600 hover:text-white font-bold uppercase text-xs mt-5 py-2 mpx-4 rounded cursor-pointer">
+                            Learn More</div>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border rounded-lg  md:rounded-l-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
+                <div class="">Master</div>
+                <div id="month" class="font-bold text-6xl month hidden">&dollar;39.99</div>
+                <div id="annual" class="font-bold text-6xl annual">&dollar;399.99</div>
+                <hr>
+                <div class="text-sm my-3">2 TB Storage</div>
+                <hr>
+                <div class="text-sm my-3">10 Users Allowed</div>
+                <hr>
+                <div class="text-sm my-3">Send up to 20 GB</div>
+                <hr>
+                <a href="#" target="_blank">
+                    <div
+                        class="bg-gradient-base border border-blue-600 hover:bg-transparent text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">
+                        Learn More</div>
+                </a>
+            </div>
+        </div>
+        <!--Table 2 end-->
+
+        <!--Table 3 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 3</h1>
+        </div>
+        <div class="sm:px-6 w-full">
+            <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+            <div class="px-4 md:px-10 py-4 md:py-7">
+                <div class="flex items-center justify-between">
+                    <p tabindex="0"
+                        class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">
+                        Tasks</p>
+                    <div
+                        class="py-3 px-4 flex items-center text-sm font-medium leading-none text-gray-600 bg-gray-200 hover:bg-gray-300 cursor-pointer rounded">
+                        <p>Sort By:</p>
+                        <select aria-label="select"
+                            class="focus:text-indigo-600 focus:outline-none bg-transparent ml-1">
+                            <option class="text-sm text-indigo-800">Latest</option>
+                            <option class="text-sm text-indigo-800">Oldest</option>
+                            <option class="text-sm text-indigo-800">Latest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
+                <div class="sm:flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a class="rounded-full focus:outline-none focus:ring-2  focus:bg-indigo-50 focus:ring-indigo-800"
+                            href=" javascript:void(0)">
+                            <div class="py-2 px-8 bg-indigo-100 text-indigo-700 rounded-full">
+                                <p>All</p>
+                            </div>
+                        </a>
+                        <a class="rounded-full focus:outline-none focus:ring-2 focus:bg-indigo-50 focus:ring-indigo-800 ml-4 sm:ml-8"
+                            href="javascript:void(0)">
+                            <div
+                                class="py-2 px-8 text-gray-600 hover:text-indigo-700 hover:bg-indigo-100 rounded-full ">
+                                <p>Done</p>
+                            </div>
+                        </a>
+                        <a class="rounded-full focus:outline-none focus:ring-2 focus:bg-indigo-50 focus:ring-indigo-800 ml-4 sm:ml-8"
+                            href="javascript:void(0)">
+                            <div
+                                class="py-2 px-8 text-gray-600 hover:text-indigo-700 hover:bg-indigo-100 rounded-full ">
+                                <p>Pending</p>
+                            </div>
+                        </a>
+                    </div>
+                    <button onclick="popuphandler(true)"
+                        class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+                        <p class="text-sm font-medium leading-none text-white">Add Task</p>
+                    </button>
+                </div>
+                <div class="mt-7 overflow-x-auto">
+                    <table class="w-full whitespace-nowrap">
+                        <tbody>
+                            <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
+                                <td>
+                                    <div class="ml-5">
+                                        <div
+                                            class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <input placeholder="checkbox" type="checkbox"
+                                                class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                                <svg class="icon icon-tabler icon-tabler-check"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <path d="M5 12l5 5l10 -10"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="flex items-center pl-5">
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">Marketing
+                                            Keynote Presentation</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M6.66669 9.33342C6.88394 9.55515 7.14325 9.73131 7.42944 9.85156C7.71562 9.97182 8.02293 10.0338 8.33335 10.0338C8.64378 10.0338 8.95108 9.97182 9.23727 9.85156C9.52345 9.73131 9.78277 9.55515 10 9.33342L12.6667 6.66676C13.1087 6.22473 13.357 5.62521 13.357 5.00009C13.357 4.37497 13.1087 3.77545 12.6667 3.33342C12.2247 2.89139 11.6251 2.64307 11 2.64307C10.3749 2.64307 9.77538 2.89139 9.33335 3.33342L9.00002 3.66676"
+                                                stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path
+                                                d="M9.33336 6.66665C9.11611 6.44492 8.8568 6.26876 8.57061 6.14851C8.28442 6.02825 7.97712 5.96631 7.66669 5.96631C7.35627 5.96631 7.04897 6.02825 6.76278 6.14851C6.47659 6.26876 6.21728 6.44492 6.00003 6.66665L3.33336 9.33332C2.89133 9.77534 2.64301 10.3749 2.64301 11C2.64301 11.6251 2.89133 12.2246 3.33336 12.6666C3.77539 13.1087 4.37491 13.357 5.00003 13.357C5.62515 13.357 6.22467 13.1087 6.66669 12.6666L7.00003 12.3333"
+                                                stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="pl-24">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M9.16667 2.5L16.6667 10C17.0911 10.4745 17.0911 11.1922 16.6667 11.6667L11.6667 16.6667C11.1922 17.0911 10.4745 17.0911 10 16.6667L2.5 9.16667V5.83333C2.5 3.99238 3.99238 2.5 5.83333 2.5H9.16667"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <circle cx="7.50004" cy="7.49967" r="1.66667" stroke="#52525B"
+                                                stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                            </circle>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Urgent</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path d="M7.5 5H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 10H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 15H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 5V5.00667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 10V10.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 15V15.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M3.33331 17.4998V6.6665C3.33331 6.00346 3.59671 5.36758 4.06555 4.89874C4.53439 4.4299 5.17027 4.1665 5.83331 4.1665H14.1666C14.8297 4.1665 15.4656 4.4299 15.9344 4.89874C16.4033 5.36758 16.6666 6.00346 16.6666 6.6665V11.6665C16.6666 12.3295 16.4033 12.9654 15.9344 13.4343C15.4656 13.9031 14.8297 14.1665 14.1666 14.1665H6.66665L3.33331 17.4998Z"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M10 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M6.66669 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M13.3333 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M12.5 5.83339L7.08333 11.2501C6.75181 11.5816 6.56556 12.0312 6.56556 12.5001C6.56556 12.9689 6.75181 13.4185 7.08333 13.7501C7.41485 14.0816 7.86449 14.2678 8.33333 14.2678C8.80217 14.2678 9.25181 14.0816 9.58333 13.7501L15 8.33339C15.663 7.67034 16.0355 6.77107 16.0355 5.83339C16.0355 4.8957 15.663 3.99643 15 3.33339C14.337 2.67034 13.4377 2.29785 12.5 2.29785C11.5623 2.29785 10.663 2.67034 10 3.33339L4.58333 8.75005C3.58877 9.74461 3.03003 11.0935 3.03003 12.5001C3.03003 13.9066 3.58877 15.2555 4.58333 16.2501C5.57789 17.2446 6.92681 17.8034 8.33333 17.8034C9.73985 17.8034 11.0888 17.2446 12.0833 16.2501L17.5 10.8334"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <button
+                                        class="py-3 px-3 text-sm focus:outline-none leading-none text-red-700 bg-red-100 rounded">Due
+                                        today at 18:00</button>
+                                </td>
+                                <td class="pl-4">
+                                    <button
+                                        class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                </td>
+                                <td>
+                                    <div class="relative px-5 pt-2">
+                                        <button class="focus:ring-2 rounded-md focus:outline-none"
+                                            onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                            <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Edit</p>
+                                            </div>
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Delete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="h-3"></tr>
+                            <tr tabindex="0" class="focus:outline-none  h-16 border border-gray-100 rounded">
+                                <td>
+                                    <div class="ml-5">
+                                        <div
+                                            class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <input placeholder="checkbox" type="checkbox"
+                                                class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                                <svg class="icon icon-tabler icon-tabler-check"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <path d="M5 12l5 5l10 -10"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="focus:text-indigo-600 ">
+                                    <div class="flex items-center pl-5">
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">UX Wireframes
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="pl-24">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M9.16667 2.5L16.6667 10C17.0911 10.4745 17.0911 11.1922 16.6667 11.6667L11.6667 16.6667C11.1922 17.0911 10.4745 17.0911 10 16.6667L2.5 9.16667V5.83333C2.5 3.99238 3.99238 2.5 5.83333 2.5H9.16667"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <circle cx="7.50004" cy="7.49967" r="1.66667" stroke="#52525B"
+                                                stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                            </circle>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Urgent</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path d="M7.5 5H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 10H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 15H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 5V5.00667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 10V10.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 15V15.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M3.33331 17.4998V6.6665C3.33331 6.00346 3.59671 5.36758 4.06555 4.89874C4.53439 4.4299 5.17027 4.1665 5.83331 4.1665H14.1666C14.8297 4.1665 15.4656 4.4299 15.9344 4.89874C16.4033 5.36758 16.6666 6.00346 16.6666 6.6665V11.6665C16.6666 12.3295 16.4033 12.9654 15.9344 13.4343C15.4656 13.9031 14.8297 14.1665 14.1666 14.1665H6.66665L3.33331 17.4998Z"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M10 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M6.66669 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M13.3333 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M12.5 5.83339L7.08333 11.2501C6.75181 11.5816 6.56556 12.0312 6.56556 12.5001C6.56556 12.9689 6.75181 13.4185 7.08333 13.7501C7.41485 14.0816 7.86449 14.2678 8.33333 14.2678C8.80217 14.2678 9.25181 14.0816 9.58333 13.7501L15 8.33339C15.663 7.67034 16.0355 6.77107 16.0355 5.83339C16.0355 4.8957 15.663 3.99643 15 3.33339C14.337 2.67034 13.4377 2.29785 12.5 2.29785C11.5623 2.29785 10.663 2.67034 10 3.33339L4.58333 8.75005C3.58877 9.74461 3.03003 11.0935 3.03003 12.5001C3.03003 13.9066 3.58877 15.2555 4.58333 16.2501C5.57789 17.2446 6.92681 17.8034 8.33333 17.8034C9.73985 17.8034 11.0888 17.2446 12.0833 16.2501L17.5 10.8334"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <button
+                                        class="py-3 px-6 focus:outline-none text-sm leading-none text-gray-700 bg-gray-100 rounded">Due
+                                        on 21.02.21</button>
+                                </td>
+                                <td class="pl-4">
+                                    <button
+                                        class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                </td>
+                                <td>
+                                    <div class="relative px-5 pt-2">
+                                        <button class="focus:ring-2 rounded-md focus:outline-none"
+                                            onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                            <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Edit</p>
+                                            </div>
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Delete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="h-3"></tr>
+                            <tr tabindex="0"
+                                class="focus:outline-none focus:text-indigo-600 h-16 border border-gray-100 rounded">
+                                <td>
+                                    <div class="ml-5">
+                                        <div
+                                            class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <input placeholder="checkbox" type="checkbox"
+                                                class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                                <svg class="icon icon-tabler icon-tabler-check"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <path d="M5 12l5 5l10 -10"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="flex items-center pl-5">
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">Marketing
+                                            Keynote Presentation</p>
+                                    </div>
+                                </td>
+                                <td class="pl-24"></td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path d="M7.5 5H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 10H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 15H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 5V5.00667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 10V10.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 15V15.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M3.33331 17.4998V6.6665C3.33331 6.00346 3.59671 5.36758 4.06555 4.89874C4.53439 4.4299 5.17027 4.1665 5.83331 4.1665H14.1666C14.8297 4.1665 15.4656 4.4299 15.9344 4.89874C16.4033 5.36758 16.6666 6.00346 16.6666 6.6665V11.6665C16.6666 12.3295 16.4033 12.9654 15.9344 13.4343C15.4656 13.9031 14.8297 14.1665 14.1666 14.1665H6.66665L3.33331 17.4998Z"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M10 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M6.66669 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M13.3333 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M12.5 5.83339L7.08333 11.2501C6.75181 11.5816 6.56556 12.0312 6.56556 12.5001C6.56556 12.9689 6.75181 13.4185 7.08333 13.7501C7.41485 14.0816 7.86449 14.2678 8.33333 14.2678C8.80217 14.2678 9.25181 14.0816 9.58333 13.7501L15 8.33339C15.663 7.67034 16.0355 6.77107 16.0355 5.83339C16.0355 4.8957 15.663 3.99643 15 3.33339C14.337 2.67034 13.4377 2.29785 12.5 2.29785C11.5623 2.29785 10.663 2.67034 10 3.33339L4.58333 8.75005C3.58877 9.74461 3.03003 11.0935 3.03003 12.5001C3.03003 13.9066 3.58877 15.2555 4.58333 16.2501C5.57789 17.2446 6.92681 17.8034 8.33333 17.8034C9.73985 17.8034 11.0888 17.2446 12.0833 16.2501L17.5 10.8334"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <button
+                                        class="py-3 px-7 text-sm leading-none text-gray-700 bg-gray-100 rounded focus:outline-none">Due
+                                        tomorrow</button>
+                                </td>
+                                <td class="pl-4">
+                                    <button
+                                        class="focus:ring-2 focus:ring-offset-2  focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                </td>
+                                <td>
+                                    <div class="relative px-5 pt-2">
+                                        <button class="focus:ring-2 rounded-md focus:outline-none"
+                                            onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                            <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Edit</p>
+                                            </div>
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Delete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="h-3"></tr>
+                            <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
+                                <td>
+                                    <div class="ml-5">
+                                        <div
+                                            class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <input placeholder="checkbox" checked="" type="checkbox"
+                                                class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                                <svg class="icon icon-tabler icon-tabler-check"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <path d="M5 12l5 5l10 -10"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="flex items-center pl-5">
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">Development
+                                            Phase 1</p>
+                                    </div>
+                                </td>
+                                <td class="pl-24"></td>
+                                <td class="pl-5"></td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path d="M7.5 5H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 10H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 15H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 5V5.00667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 10V10.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 15V15.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M3.33331 17.4998V6.6665C3.33331 6.00346 3.59671 5.36758 4.06555 4.89874C4.53439 4.4299 5.17027 4.1665 5.83331 4.1665H14.1666C14.8297 4.1665 15.4656 4.4299 15.9344 4.89874C16.4033 5.36758 16.6666 6.00346 16.6666 6.6665V11.6665C16.6666 12.3295 16.4033 12.9654 15.9344 13.4343C15.4656 13.9031 14.8297 14.1665 14.1666 14.1665H6.66665L3.33331 17.4998Z"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M10 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M6.66669 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M13.3333 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M12.5 5.83339L7.08333 11.2501C6.75181 11.5816 6.56556 12.0312 6.56556 12.5001C6.56556 12.9689 6.75181 13.4185 7.08333 13.7501C7.41485 14.0816 7.86449 14.2678 8.33333 14.2678C8.80217 14.2678 9.25181 14.0816 9.58333 13.7501L15 8.33339C15.663 7.67034 16.0355 6.77107 16.0355 5.83339C16.0355 4.8957 15.663 3.99643 15 3.33339C14.337 2.67034 13.4377 2.29785 12.5 2.29785C11.5623 2.29785 10.663 2.67034 10 3.33339L4.58333 8.75005C3.58877 9.74461 3.03003 11.0935 3.03003 12.5001C3.03003 13.9066 3.58877 15.2555 4.58333 16.2501C5.57789 17.2446 6.92681 17.8034 8.33333 17.8034C9.73985 17.8034 11.0888 17.2446 12.0833 16.2501L17.5 10.8334"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-4">
+                                    <button
+                                        class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                </td>
+                                <td>
+                                    <div class="relative px-5 pt-2">
+                                        <button class="focus:ring-2 rounded-md focus:outline-none"
+                                            onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                            <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-red-300 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Edit</p>
+                                            </div>
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-red-300 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Delete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="h-3"></tr>
+                            <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
+                                <td>
+                                    <div class="ml-5">
+                                        <div
+                                            class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <input placeholder="checkbox" type="checkbox"
+                                                class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                            <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                                <svg class="icon icon-tabler icon-tabler-check"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                    <path d="M5 12l5 5l10 -10"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="flex items-center pl-5">
+                                        <p class="text-base font-medium leading-none text-gray-700 mr-2">CSS and
+                                            functionality</p>
+                                    </div>
+                                </td>
+                                <td class="pl-24">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M9.16667 2.5L16.6667 10C17.0911 10.4745 17.0911 11.1922 16.6667 11.6667L11.6667 16.6667C11.1922 17.0911 10.4745 17.0911 10 16.6667L2.5 9.16667V5.83333C2.5 3.99238 3.99238 2.5 5.83333 2.5H9.16667"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <circle cx="7.50004" cy="7.49967" r="1.66667" stroke="#52525B"
+                                                stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                                            </circle>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">Urgent</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path d="M7.5 5H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 10H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M7.5 15H16.6667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 5V5.00667" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 10V10.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M4.16669 15V15.0067" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M3.33331 17.4998V6.6665C3.33331 6.00346 3.59671 5.36758 4.06555 4.89874C4.53439 4.4299 5.17027 4.1665 5.83331 4.1665H14.1666C14.8297 4.1665 15.4656 4.4299 15.9344 4.89874C16.4033 5.36758 16.6666 6.00346 16.6666 6.6665V11.6665C16.6666 12.3295 16.4033 12.9654 15.9344 13.4343C15.4656 13.9031 14.8297 14.1665 14.1666 14.1665H6.66665L3.33331 17.4998Z"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M10 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M6.66669 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M13.3333 9.1665V9.17484" stroke="#52525B" stroke-width="1.25"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M12.5 5.83339L7.08333 11.2501C6.75181 11.5816 6.56556 12.0312 6.56556 12.5001C6.56556 12.9689 6.75181 13.4185 7.08333 13.7501C7.41485 14.0816 7.86449 14.2678 8.33333 14.2678C8.80217 14.2678 9.25181 14.0816 9.58333 13.7501L15 8.33339C15.663 7.67034 16.0355 6.77107 16.0355 5.83339C16.0355 4.8957 15.663 3.99643 15 3.33339C14.337 2.67034 13.4377 2.29785 12.5 2.29785C11.5623 2.29785 10.663 2.67034 10 3.33339L4.58333 8.75005C3.58877 9.74461 3.03003 11.0935 3.03003 12.5001C3.03003 13.9066 3.58877 15.2555 4.58333 16.2501C5.57789 17.2446 6.92681 17.8034 8.33333 17.8034C9.73985 17.8034 11.0888 17.2446 12.0833 16.2501L17.5 10.8334"
+                                                stroke="#52525B" stroke-width="1.25" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                        <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                                    </div>
+                                </td>
+                                <td class="pl-5">
+                                    <button
+                                        class="py-3 px-3 text-sm leading-none text-red-700 bg-red-100 rounded focus:outline-none">Due
+                                        Today at 18:00</button>
+                                </td>
+                                <td class="pl-4">
+                                    <button
+                                        class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                </td>
+                                <td>
+                                    <div class="relative px-5 pt-2">
+                                        <button class="focus:ring-2 rounded-md focus:outline-none"
+                                            onclick="dropdownFunction(this)" role="button" aria-label="option">
+                                            <svg class="dropbtn" onclick="dropdownFunction(this)"
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
+                                                    stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden">
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Edit</p>
+                                            </div>
+                                            <div tabindex="0"
+                                                class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
+                                                <p>Delete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--Table 3 end-->
+        <!--Table 4 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 4</h1>
+        </div>
+
+        <div class="bg-white p-8 rounded-md w-full">
+            <div class=" flex items-center justify-between pb-6">
+                <div>
+                    <h2 class="text-gray-600 font-semibold">Products Oder</h2>
+                    <span class="text-xs">All products item</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex bg-gray-50 items-center p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id=""
+                            placeholder="search...">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                        <table class="min-w-full leading-normal">
+                            <thead>
+                                <tr>
+                                    <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Name
+                                    </th>
+                                    <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        products
+                                    </th>
+                                    <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Created at
+                                    </th>
+                                    <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        QRT
+                                    </th>
+                                    <th
+                                        class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    alt="" />
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-gray-900 whitespace-no-wrap">
+                                                    Vera Carpenter
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">Admin</p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            Jan 21, 2020
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            43
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <span
+                                            class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                            <span aria-hidden
+                                                class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                            <span class="relative">Activo</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    alt="" />
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-gray-900 whitespace-no-wrap">
+                                                    Blake Bowman
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">Editor</p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            Jan 01, 2020
+                                        </p>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            77
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <span
+                                            class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                            <span aria-hidden
+                                                class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                            <span class="relative">Activo</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    alt="" />
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-gray-900 whitespace-no-wrap">
+                                                    Dana Moore
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">Editor</p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            Jan 10, 2020
+                                        </p>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            64
+                                        </p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <span
+                                            class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                                            <span aria-hidden
+                                                class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                                            <span class="relative">Suspended</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-5 bg-white text-sm">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10">
+                                                <img class="w-full h-full rounded-full"
+                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
+                                                    alt="" />
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-gray-900 whitespace-no-wrap">
+                                                    Alonzo Cox
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-5 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">Admin</p>
+                                    </td>
+                                    <td class="px-5 py-5 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
+                                    </td>
+                                    <td class="px-5 py-5 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">70</p>
+                                    </td>
+                                    <td class="px-5 py-5 bg-white text-sm">
+                                        <span
+                                            class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                                            <span aria-hidden
+                                                class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
+                                            <span class="relative">Inactive</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div
+                            class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                            <span class="text-xs xs:text-sm text-gray-900">
+                                Showing 1 to 4 of 50 Entries
+                            </span>
+                            <div class="inline-flex mt-2 xs:mt-0">
+                                <button
+                                    class="text-sm text-indigo-50 transition duration-150 hover:bg-indigo-500 bg-indigo-600 font-semibold py-2 px-4 rounded-l">
+                                    Prev
+                                </button>
+                                &nbsp; &nbsp;
+                                <button
+                                    class="text-sm text-indigo-50 transition duration-150 hover:bg-indigo-500 bg-indigo-600 font-semibold py-2 px-4 rounded-r">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Table 4 end-->
+
+        <!--Table 5 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 5</h1>
+        </div>
+        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+            <div
+                class="align-middle rounded-tl-lg rounded-tr-lg inline-block min-w-full py-4 overflow-hidden bg-white shadow-lg px-12">
+                <div class="flex justify-between">
+                    <div class="inline-flex border rounded w-7/12 px-2 lg:px-6 h-12 bg-transparent">
+                        <div class="flex flex-wrap items-stretch w-full h-full mb-6 relative">
+                            <div class="flex">
+                                <span
+                                    class="flex items-center leading-normal bg-transparent rounded rounded-r-none border border-r-0 border-none lg:px-3 py-2 whitespace-no-wrap text-grey-dark text-sm">
+                                    <svg width="18" height="18" class="w-4 lg:w-auto" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.11086 15.2217C12.0381 15.2217 15.2217 12.0381 15.2217 8.11086C15.2217 4.18364 12.0381 1 8.11086 1C4.18364 1 1 4.18364 1 8.11086C1 12.0381 4.18364 15.2217 8.11086 15.2217Z"
+                                            stroke="#455A64" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.9993 16.9993L13.1328 13.1328" stroke="#455A64"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <input type="text"
+                                class="flex-shrink flex-grow flex-auto leading-normal tracking-wide w-px flex-1 border border-none border-l-0 rounded rounded-l-none px-3 relative focus:outline-none text-xxs lg:text-xs lg:text-base text-gray-500 font-thin"
+                                placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+                <table class="min-w-full">
+                    <thead>
+                        <tr>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                ID</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Fullname</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Email</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Phone</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Status</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Created At</th>
+                            <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="text-sm leading-5 text-gray-800">#1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900">Damilare Anjorin</div>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                damilareanjorin1@gmail.com</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                +2348106420637</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                    <span aria-hidden
+                                        class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">active</span>
+                                </span>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September 12</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <button
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="text-sm leading-5 text-gray-800">#1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900">Damilare Anjorin</div>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                damilareanjorin1@gmail.com</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                +2348106420637</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                    <span aria-hidden
+                                        class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">active</span>
+                                </span>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September 12</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <button
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="text-sm leading-5 text-gray-800">#1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900">Damilare Anjorin</div>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                damilareanjorin1@gmail.com</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                +2348106420637</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                                    <span aria-hidden
+                                        class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">not active</span>
+                                </span>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September 12</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <button
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="text-sm leading-5 text-gray-800">#1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900">Damilare Anjorin</div>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                damilareanjorin1@gmail.com</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                +2348106420637</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                    <span aria-hidden
+                                        class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">active</span>
+                                </span>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September 12</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <button
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="text-sm leading-5 text-gray-800">#1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900">Damilare Anjorin</div>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                damilareanjorin1@gmail.com</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                +2348106420637</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                                    <span aria-hidden
+                                        class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">disabled</span>
+                                </span>
+                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September 12</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <button
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
+                    <div>
+                        <p class="text-sm leading-5 text-blue-700">
+                            Showing
+                            <span class="font-medium">1</span>
+                            to
+                            <span class="font-medium">200</span>
+                            of
+                            <span class="font-medium">2000</span>
+                            results
+                        </p>
+                    </div>
+                    <div>
+                        <nav class="relative z-0 inline-flex shadow-sm">
+                            <div>
+                                <a href="#"
+                                    class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+                                    aria-label="Previous" v-on:click.prevent="changePage(pagination.current_page - 1)">
+                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#"
+                                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-700 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
+                                    1
+                                </a>
+                                <a href="#"
+                                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
+                                    2
+                                </a>
+                                <a href="#"
+                                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
+                                    3
+                                </a>
+                            </div>
+                            <div v-if="pagination.current_page < pagination.last_page">
+                                <a href="#"
+                                    class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+                                    aria-label="Next">
+                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Table 5 end-->
+
+        <!--Table 6 start-->
+        <div class="relative flex items-center mt-5 px-4">
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Table 6</h1>
+        </div>
+
+
+
+        <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-hidden">
+                        <table class="min-w-full text-center">
+                            <thead class="border-b bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        #
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        First
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        Last
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        Handle
+                                    </th>
+                                </tr>
+                            </thead class="border-b">
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Mark
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Otto
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        @mdo
+                                    </td>
+                                </tr class="bg-white border-b">
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Jacob
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Thornton
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        @fat
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                                    <td colspan="2"
+                                        class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
+                                        Larry the Bird
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        @twitter
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Table 6 end-->
+
+
+    </div>
+    <!-- Table end-->
+
+    <!--Table 2 script start-->
+    <!--JS for toggle-->
+    <script>
+        function myFunction() {
+            var x = document.querySelectorAll('.annual');
+            var y = document.querySelectorAll('.month');
+            for (var i = 0; i < x.length; i++) {
+                if (document.getElementById("toggle").checked == true) {
+                    x[i].classList.add('hidden');
+                    y[i].classList.remove('hidden');
+                } else {
+                    x[i].classList.remove('hidden');
+                    y[i].classList.add('hidden');
+                }
+            }
+        }
+    </script>
+    <!--Table 2 script end-->
+    <!-- Data table script start-->
+
+    <script>
+		function datatables() {
+			return {
+				headings: [
+					{
+						'key': 'userId',
+						'value': 'User ID'
+					},
+					{
+						'key': 'firstName',
+						'value': 'Firstname'
+					},
+					{
+						'key': 'lastName',
+						'value': 'Lastname'
+					},
+					{
+						'key': 'emailAddress',
+						'value': 'Email'
+					},
+					{
+						'key': 'gender',
+						'value': 'Gender'
+					},
+					{
+						'key': 'phoneNumber',
+						'value': 'Phone'
+					}
+				],
+				users: [{
+					"userId": 1,
+					"firstName": "Cort",
+					"lastName": "Tosh",
+					"emailAddress": "ctosh0@github.com",
+					"gender": "Male",
+					"phoneNumber": "327-626-5542"
+				}, {
+					"userId": 2,
+					"firstName": "Brianne",
+					"lastName": "Dzeniskevich",
+					"emailAddress": "bdzeniskevich1@hostgator.com",
+					"gender": "Female",
+					"phoneNumber": "144-190-8956"
+				}, {
+					"userId": 3,
+					"firstName": "Isadore",
+					"lastName": "Botler",
+					"emailAddress": "ibotler2@gmpg.org",
+					"gender": "Male",
+					"phoneNumber": "350-937-0792"
+				}, {
+					"userId": 4,
+					"firstName": "Janaya",
+					"lastName": "Klosges",
+					"emailAddress": "jklosges3@amazon.de",
+					"gender": "Female",
+					"phoneNumber": "502-438-7799"
+				}, {
+					"userId": 5,
+					"firstName": "Freddi",
+					"lastName": "Di Claudio",
+					"emailAddress": "fdiclaudio4@phoca.cz",
+					"gender": "Female",
+					"phoneNumber": "265-448-9627"
+				}, {
+					"userId": 6,
+					"firstName": "Oliy",
+					"lastName": "Mairs",
+					"emailAddress": "omairs5@fda.gov",
+					"gender": "Female",
+					"phoneNumber": "221-516-2295"
+				}, {
+					"userId": 7,
+					"firstName": "Tabb",
+					"lastName": "Wiseman",
+					"emailAddress": "twiseman6@friendfeed.com",
+					"gender": "Male",
+					"phoneNumber": "171-817-5020"
+				}, {
+					"userId": 8,
+					"firstName": "Joela",
+					"lastName": "Betteriss",
+					"emailAddress": "jbetteriss7@msu.edu",
+					"gender": "Female",
+					"phoneNumber": "481-100-9345"
+				}, {
+					"userId": 9,
+					"firstName": "Alistair",
+					"lastName": "Vasyagin",
+					"emailAddress": "avasyagin8@gnu.org",
+					"gender": "Male",
+					"phoneNumber": "520-669-8364"
+				}, {
+					"userId": 10,
+					"firstName": "Nealon",
+					"lastName": "Ratray",
+					"emailAddress": "nratray9@typepad.com",
+					"gender": "Male",
+					"phoneNumber": "993-654-9793"
+				}, {
+					"userId": 11,
+					"firstName": "Annissa",
+					"lastName": "Kissick",
+					"emailAddress": "akissicka@deliciousdays.com",
+					"gender": "Female",
+					"phoneNumber": "283-425-2705"
+				}, {
+					"userId": 12,
+					"firstName": "Nissie",
+					"lastName": "Sidnell",
+					"emailAddress": "nsidnellb@freewebs.com",
+					"gender": "Female",
+					"phoneNumber": "754-391-3116"
+				}, {
+					"userId": 13,
+					"firstName": "Madalena",
+					"lastName": "Fouch",
+					"emailAddress": "mfouchc@mozilla.org",
+					"gender": "Female",
+					"phoneNumber": "584-300-9004"
+				}, {
+					"userId": 14,
+					"firstName": "Rozina",
+					"lastName": "Atkins",
+					"emailAddress": "ratkinsd@japanpost.jp",
+					"gender": "Female",
+					"phoneNumber": "792-856-0845"
+				}, {
+					"userId": 15,
+					"firstName": "Lorelle",
+					"lastName": "Sandcroft",
+					"emailAddress": "lsandcrofte@google.nl",
+					"gender": "Female",
+					"phoneNumber": "882-911-7241"
+				}],
+				selectedRows: [],
+
+				open: false,
+				
+				toggleColumn(key) {
+					// Note: All td must have the same class name as the headings key! 
+					let columns = document.querySelectorAll('.' + key);
+
+					if (this.$refs[key].classList.contains('hidden') && this.$refs[key].classList.contains(key)) {
+						columns.forEach(column => {
+							column.classList.remove('hidden');
+						});
+					} else {
+						columns.forEach(column => {
+							column.classList.add('hidden');
+						});
+					}
+				},
+
+				getRowDetail($event, id) {
+					let rows = this.selectedRows;
+
+					if (rows.includes(id)) {
+						let index = rows.indexOf(id);
+						rows.splice(index, 1);
+					} else {
+						rows.push(id);
+					}
+				},
+
+				selectAllCheckbox($event) {
+					let columns = document.querySelectorAll('.rowCheckbox');
+
+					this.selectedRows = [];
+
+					if ($event.target.checked == true) {
+						columns.forEach(column => {
+							column.checked = true
+							this.selectedRows.push(parseInt(column.name))
+						});
+					} else {
+						columns.forEach(column => {
+							column.checked = false
+						});
+						this.selectedRows = [];
+					}
+				}
+			}
+		}
+	</script>
+    <!--Data table script end -->
+</body>
+
+</html>
