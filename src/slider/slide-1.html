@@ -343,7 +343,7 @@ to-indigo-300
     <!--Title end-->
     <!-- Swiper -->
     <div class="swiper mySwiper h-full w-full md:h-1/2 overflow-hidden container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
             <div class="swiper-slide">
                 <img src="./image//1.jpg" />
             </div>
@@ -387,7 +387,7 @@ to-indigo-300
     <!--Title end-->
 
     <!--Slider-2 start-->
-    <div class="swiper mySwiper2 container w-1/2 h-1/2">
+    <div class="swiper mySwiper2 container w-2/3 sm:w-1/2 h-1/2 sm:h-full">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="./image//1.jpg" />
@@ -426,7 +426,7 @@ to-indigo-300
                 checked="checked">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                 <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center pt-10 md:pt-32">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 animate-spin md:col-span-1 col-span-3">
                             <img
                                 src="https://pngroyale.com/wp-content/uploads/2022/03/Exhaust-Fan-Transparent-Images.png" />
@@ -455,7 +455,7 @@ to-indigo-300
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                 <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center pt-10 md:pt-32">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 md:col-span-1 col-span-3">
                             <img
                                 src="./image//6.jpg" />
@@ -485,7 +485,26 @@ to-indigo-300
             <!--Slide 3-->
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
-                <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center">Slide 3</div>
+                <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center">
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 md:col-span-1 col-span-4 mt-20">
+                            <img
+                                src="./image//2.jpg" />
+                        </div>
+                        <!-- ... -->
+                        <div class="md:col-span-2 col-span-2">
+                            <div
+                                class="p-6 max-w-sm mx-auto bg-yellow-500 rounded-xl shadow-lg flex items-center space-x-4">
+                                <h1 class="font-serif">Cool men !</h1>
+                                <p class="font-serif text-sm">
+                                    Tailwind lets you conditionally apply utility classes in different states using
+                                    variant modifiers. For example, use hover:grid-cols-6 to only apply the grid-cols-6
+                                    utility on hover.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <label for="carousel-2"
                 class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
