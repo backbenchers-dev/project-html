@@ -285,7 +285,7 @@ to-indigo-300
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="p-4 flex flex-row items-center justify-between">
-                <a href="../index.html" class="flex items-center">
+                <a href="../../index.html" class="flex items-center">
                     <img src="https://ih1.redbubble.net/image.1964193013.9830/st,small,507x507-pad,600x600,f8f8f8.jpg"
                         class="mr-3 h-6 sm:h-9 animate-pulse" alt="Flowbite Logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Backbencher</span>
@@ -303,14 +303,8 @@ to-indigo-300
             </div>
             <nav :class="{'flex': open, 'hidden': !open}"
                 class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="#">Blog</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="#">Portfolio</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="#">About</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="#">Contact</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="../landing-page/landing-page-2.html">Landing page</a>
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
@@ -331,13 +325,9 @@ to-indigo-300
                         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Slider</a>
-                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Navbar</a>
-                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Form</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="../card/card.html">Card</a>
+                            href="../card/card.html">Card</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="../table/table.html">Table</a>
                         </div>
                     </div>
                 </div>
@@ -353,7 +343,7 @@ to-indigo-300
     <!--Title end-->
     <!-- Swiper -->
     <div class="swiper mySwiper h-full w-full md:h-1/2 overflow-hidden container">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
             <div class="swiper-slide">
                 <img src="./image//1.jpg" />
             </div>
@@ -397,7 +387,7 @@ to-indigo-300
     <!--Title end-->
 
     <!--Slider-2 start-->
-    <div class="swiper mySwiper2 container w-1/2 h-1/2">
+    <div class="swiper mySwiper2 container w-2/3 sm:w-1/2 h-1/2 sm:h-full">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="./image//1.jpg" />
@@ -436,7 +426,7 @@ to-indigo-300
                 checked="checked">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                 <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center pt-10 md:pt-32">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 animate-spin md:col-span-1 col-span-3">
                             <img
                                 src="https://pngroyale.com/wp-content/uploads/2022/03/Exhaust-Fan-Transparent-Images.png" />
@@ -465,7 +455,7 @@ to-indigo-300
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                 <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center pt-10 md:pt-32">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 md:col-span-1 col-span-3">
                             <img
                                 src="./image//6.jpg" />
@@ -495,7 +485,26 @@ to-indigo-300
             <!--Slide 3-->
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:75vh;">
-                <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center">Slide 3</div>
+                <div class="block h-full w-full bg-yellow-500 text-white text-5xl text-center">
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="ml-20 md:ml-18 h-40 w-40 md:h-80 md:w-80 md:col-span-1 col-span-4 mt-20">
+                            <img
+                                src="./image//2.jpg" />
+                        </div>
+                        <!-- ... -->
+                        <div class="md:col-span-2 col-span-2">
+                            <div
+                                class="p-6 max-w-sm mx-auto bg-yellow-500 rounded-xl shadow-lg flex items-center space-x-4">
+                                <h1 class="font-serif">Cool men !</h1>
+                                <p class="font-serif text-sm">
+                                    Tailwind lets you conditionally apply utility classes in different states using
+                                    variant modifiers. For example, use hover:grid-cols-6 to only apply the grid-cols-6
+                                    utility on hover.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <label for="carousel-2"
                 class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
