@@ -2383,10 +2383,128 @@ to-indigo-100
     <!--Landing page 7 end -->
 
     <!--Landing page 8 start-->
-    <div class="mt-20"> 
+    <div class="relative flex items-center sm:mt-5 mt-44 px-4 max-w-xs">
+        <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Landing page 8</h1>
+    </div>
+    <div class="container mx-auto">
+        <div class="w-full min-h-screen font-sans text-yellow-900 bg-gradient-to-br from-transparent to-yellow-300">
+            <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+            <div class="w-full  bg-gradient-to-br from-transparent to-yellow-300  text-white">
+                <div x-data="{ open: false }"
+                    class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div class="p-4 flex flex-row items-center justify-between">
+                        <a href="./index.html" class="flex items-center">
+                            <img src="https://ih1.redbubble.net/image.1964193013.9830/st,small,507x507-pad,600x600,f8f8f8.jpg"
+                                class="mr-3 h-6 sm:h-9 animate-pulse" alt="Flowbite Logo" />
+                            <span
+                                class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Backbencher</span>
+                        </a>
+                        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+                            @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav :class="{'flex': open, 'hidden': !open}"
+                        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Blog</a>
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Portfolio</a>
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">About</a>
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">Contact</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-wrap-reverse gap-y-24 justify-between py-12 px-6 mx-auto max-w-screen-xl sm:px-8 md:px-12 lg:px-16 xl:px-24">
+                <div class="relative z-10 md:w-1/2 w-full">
+                    <img class="absolute top-0 right-0 md:-top-4 md:-right-8 w-24 h-auto" src="/img/leaf.png" alt="" />
+                    <span class="flex items-center px-1 text-xl text-green">
+                        <span class="font-medium">100% Organic food</span>
+                        <img class="w-auto h-8" src="./img/vegetable.png" alt="" />
+                    </span>
+                    <h1
+                        class="pt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight whitespace-nowrap">
+                        Healthy Lifestyle <br />
+                        is your only <br />
+                        <span class="whitespace-nowrap text-green"> unfair advantage </span>
+                    </h1>
+                    <p class="pt-8 sm:text-lg max-w-md font-normal text-gray-600 leading-relaxed">
+                        Choose healthy habits with Organo daily meal prepared by our expert nutritionist
+                        and chef
+                    </p>
+                    <div class="flex pt-8 space-x-4 sm:space-x-6">
+                        <button
+                            class="flex justify-center items-center w-full sm:w-auto h-13 px-8 bg-green font-medium text-white rounded-xl whitespace-nowrap hover:shadow-primary transition-shadow duration-300">
+                            Get started
+                        </button>
+                        <button
+                            class="flex justify-center items-center w-full sm:w-auto h-13 px-8 font-medium text-gray-900 border border-gray-900 rounded-xl whitespace-nowrap hover:shadow-xl transition-shadow duration-300">
+                            Explore menu
+                        </button>
+                    </div>
+                    <div class="flex pt-20">
+                        <img class="w-24" src="./img/chef.png" alt="" />
+                        <div class="pt-5 pl-3">
+                            <div class="text-xl font-bold leading-relaxed">Chef of the month</div>
+                            <div class="inline-flex text-gray-600 leading-relaxed">
+                                People loved his 🍳
+                            </div>
+                            <div class="font-bold text-green leading-relaxed">80+ famous dishes</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex md:hidden pt-8 justify-end space-x-1 font-bold">
+                            <span>Powered by</span>
+                            <FuelerIcon class="w-6 h-6 text-gray-900 fill-current" />
+                            <span>Fueler</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative md:w-1/2 w-full flex flex-col justify-between">
+                    <img class="w-96 lg:w-full drop-shadow-2xl self-center lg:self-end"
+                        src="https://www.transparentpng.com/thumb/vegetables/great-veggies-and-fruits-in-the-basket-transparent-background-97OceY.png"
+                        alt="" />
+                    <div
+                        class="absolute right-0 lg:-right-6 top-0 lg:top-28 flex flex-col py-5 px-7 rounded-2xl shadow-xl bg-white/80 backdrop-blur-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                        Book Now
+                    </div>
+                    <div
+                        class="absolute left-0 bottom-0 md:bottom-32 lg:bottom-16 flex bg-white/80 rounded-2xl shadow-xl backdrop-blur-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                        <img class="w-auto h-20 self-end" src="./img/driver.png" alt="" />
+                        <div class="pr-7 pl-2 py-5">
+                            <div class="font-bold">Fast delivery</div>
+                            <div class="text-gray-600 leading-relaxed">30 mins delivery 🚀</div>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-end space-x-1 font-bold">
+                        <span>Powered by</span>
+                        <FuelerIcon class="w-6 h-6 text-gray-900 fill-current" />
+                        <span>Backbencher</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Landing page 8 end-->
+
+    <!--Landing page 9 start-->
+    <div class="mt-20">
         <div class="relative flex items-center mt-5 px-4 max-w-xs">
-            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Landing page 8</h1>
-        </div>   
+            <h1 class="text-4xl font-extrabold py-4 border-b-4 border-red-500 mb-10">Landing page 9</h1>
+        </div>
         <div class="z-0 opacity-90 w-full h-full absolute mr-10"
             style="background: linear-gradient(-45deg, #ee0758 0%, #f267d4 50%, #ebaae5 100%);">
         </div>
@@ -2467,7 +2585,8 @@ to-indigo-100
                                     <h4 class="text-black items-center xl:text-2xl">One Platform</h4>
                                 </div>
                             </div>
-                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see nunable
+                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see
+                                nunable
                                 uneasy. Drawings can followed by improved out sociable not. Earnestly so do instantly
                                 pretended.</p>
                         </div>
@@ -2485,7 +2604,8 @@ to-indigo-100
                                     <h4 class="text-black items-center xl:text-2xl">Communication</h4>
                                 </div>
                             </div>
-                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see nunable
+                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see
+                                nunable
                                 uneasy. Drawings can followed by improved out sociable not. Earnestly so do instantly
                                 pretended.</p>
                         </div>
@@ -2506,7 +2626,8 @@ to-indigo-100
                                     <h4 class="text-black items-center xl:text-2xl">Project Management</h4>
                                 </div>
                             </div>
-                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see nunable
+                            <p><b class="font-normal text-blue-600">No more Mulitple Platforms.</b> Now it had see
+                                nunable
                                 uneasy. Drawings can followed by improved out sociable not. Earnestly so do instantly
                                 pretended.</p>
                         </div>
@@ -2520,7 +2641,7 @@ to-indigo-100
             </footer>
         </div>
     </div>
-    <!--Landing page 8 end-->
+    <!--Landing page 9 end-->
     </div>
 
 
